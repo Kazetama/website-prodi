@@ -21,10 +21,6 @@ import admin from '@/routes/admin'
 import type { NavItem, Role } from '@/types'
 import AppLogo from './app-logo'
 
-/* ======================================================
-| NAV CONFIG
-====================================================== */
-
 const mainNavItems: NavItem[] = [
     {
         title: 'Dashboard',
@@ -38,6 +34,12 @@ const mainNavItems: NavItem[] = [
         icon: Shield,
         roles: ['admin'],
     },
+    {
+        title: 'User Management',
+        href: admin.users.index().url,
+        icon: Folder,
+        roles: ['admin'],
+    }
 ]
 
 const footerNavItems: NavItem[] = [
@@ -52,10 +54,6 @@ const footerNavItems: NavItem[] = [
         icon: BookOpen,
     },
 ]
-
-/* ======================================================
-| COMPONENT
-====================================================== */
 
 export function AppSidebar() {
     const { auth } = usePage().props as {
