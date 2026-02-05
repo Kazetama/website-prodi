@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AnnouncementController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -13,4 +14,6 @@ Route::middleware(['auth', 'verified', 'redirect.role', 'role:admin'])
 
         Route::get('/users', [UserController::class, 'index'])
             ->name('users.index');
+
+        Route::resource('announcements', AnnouncementController::class);
     });

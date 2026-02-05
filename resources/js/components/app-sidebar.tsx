@@ -39,6 +39,12 @@ const mainNavItems: NavItem[] = [
         href: admin.users.index().url,
         icon: Folder,
         roles: ['admin'],
+    },
+    {
+        title: 'Announcements',
+        href: admin.announcements.index().url,
+        icon: BookOpen,
+        roles: ['admin'],
     }
 ]
 
