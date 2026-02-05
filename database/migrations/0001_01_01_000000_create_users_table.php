@@ -18,9 +18,14 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('nim', 30)->unique()->nullable();
+            $table->string('program_studi', 100)->nullable();
+            $table->string('fakultas', 100)->nullable();
+            $table->year('angkatan')->nullable();
+            $table->string('no_hp', 20)->nullable();
             $table->timestamps();
         });
-
+        
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');
